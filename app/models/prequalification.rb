@@ -1,0 +1,2 @@
+class Prequalification < ApplicationRecord
+end

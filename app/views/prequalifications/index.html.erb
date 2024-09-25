@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Prequalifications" %>
+
+<h1>Prequalifications</h1>
+
+<div id="prequalifications">
+  <% @prequalifications.each do |prequalification| %>
+    <%= render prequalification %>
+    <p>
+      <%= link_to "Show this prequalification", prequalification %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New prequalification", new_prequalification_path %>

@@ -1,1 +1,103 @@
 // Specific CSS for your home-page
+// Typography and Body Styles
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+// Container Layout
+.container {
+  width: 900px;
+  margin: auto;
+  @media (max-width: 900px) {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+// Hero / Banner Section
+.card-banner {
+  padding: 200px 0;
+  background-size: contain;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.card-banner h1, .card-banner p {
+  color: white;
+}
+
+.card-banner p {
+  opacity: 0.7;
+  font-size: 20px;
+}
+
+.btn-apply {
+  background-color: #1EDD88;
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+// Card Layout and Styles
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+
+  @media (max-width: 500px) {
+    justify-content: space-around;
+  }
+}
+
+.card {
+  width: 230px;
+  padding: 20px;
+  border: 1px solid #E6E6E6;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #E6E6E6;
+  text-align: center;
+  margin-bottom: 30px;
+
+  img {
+    width: 150px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    opacity: 0.5;
+  }
+}
+
+// Text Alignment Utilities
+.text-center {
+  text-align: center;
+}
+
+// Footer Section
+.footer {
+  text-align: center;
+  padding: 60px;
+  background-color: #2C2B2B;
+
+  a {
+    font-size: 30px;
+    color: #1EDD88;
+    margin: 0 10px;
+
+    &:hover {
+      color: #BF0F12;
+    }
+  }
+
+  p {
+    color: #6B6C6C;
+  }
+
+  .fas {
+    color: #BF0F12;
+  }
+}

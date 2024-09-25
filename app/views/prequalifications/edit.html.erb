@@ -1,0 +1,12 @@
+<% content_for :title, "Editing prequalification" %>
+
+<h1>Editing prequalification</h1>
+
+<%= render "form", prequalification: @prequalification %>
+
+<br>
+
+<div>
+  <%= link_to "Show this prequalification", @prequalification %> |
+  <%= link_to "Back to prequalifications", prequalifications_path %>
+</div>

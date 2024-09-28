@@ -1,6 +1,9 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: whitesmoke;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +11,18 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 100px;
+  width: 60px; // Increase the size a bit to match the screenshot
+}
+
+.navbar-nav .nav-link {
+  margin-left: 1.5rem; // Add space between the links
+  font-size: 16px; // Adjust text size for visibility
+  color: #333; // Text color matching the design
+}
+
+.navbar-nav .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
 }

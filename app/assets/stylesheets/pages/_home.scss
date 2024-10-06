@@ -1,149 +1,22 @@
-// Variables for consistent theming
-$primary-color: #f5f5dc;
-$text-color: #333;
-$accent-color: #4a4a4a;
-$card-border-color: #E6E6E6;
-$btn-hover-color: #17c678;
-$card-hover-shadow: rgba(0, 0, 0, 0.1);
+/* app/assets/stylesheets/application.css */
 
-// Body styling
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: $text-color;
+.custom-section {
+  background-color:#ffffff; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 2rem; /* Extra padding */
 }
 
-// Container for consistent layout
-.container {
-  width: 900px;
-  margin: auto;
-  @media (max-width: 900px) {
-    width: 100%;
-    padding: 0 15px;
-  }
+/* You can also style elements inside the section */
+.custom-section h1 {
+  color: #2c3e50; /* Darker text color */
 }
 
-// Hero/Banner section
-.card-banner {
-  padding: 200px 0;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-
-  h1, p {
-    color: white;
-  }
-
-  p {
-    opacity: 0.7;
-    font-size: 20px;
-  }
+.custom-section p {
+  color: #34495e; /* Medium text color */
 }
 
-// Apply Button Styles
-.btn-apply {
-  background-color: #1EDD88;
-  color: white;
-  padding: 16px 36px;
-  border-radius: 50px;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: $btn-hover-color;
-  }
-}
-
-// Cards Layout
-.cards {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-
-  @media (max-width: 768px) {
-    justify-content: space-around;
-  }
-
-  @media (max-width: 500px) {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-// Individual Card Styling
-.card {
-  width: 230px;
-  padding: 20px;
-  border: 1px solid $card-border-color;
-  border-radius: 8px;
-  box-shadow: 0 0 5px $card-border-color;
-  text-align: center;
-  margin-bottom: 30px;
-  background-color: whitesmoke;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-
-  // Flexbox for vertical alignment and centering content
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  // Hover effect for interactivity
-  &:hover {
-    box-shadow: 0 5px 20px $card-hover-shadow;
-    transform: translateY(-5px);
-  }
-
-  // Image Styling
-  img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 15px;
-    display: block;
-    // Ensure image is centered in the card
-    margin-left: auto;
-    margin-right: auto;
-    transition: transform 0.3s ease;
-
-    // Scale the image slightly on hover
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  // Heading and Paragraph Alignment
-  h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: $text-color;
-    text-align: center; // Centering text inside the card
-  }
-
-  p {
-    opacity: 0.7;
-    color: $text-color;
-    text-align: center; // Centering text inside the card
-  }
-
-  // Button or CTA within the card (if applicable)
-  .card-btn {
-    background-color: #1EDD88;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin-top: 15px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: $btn-hover-color;
-    }
-  }
+.custom-section .btn {
+  background-color: #3498db; /* Button color */
+  color: white; /* Button text color */
 }

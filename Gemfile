@@ -41,6 +41,11 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem 'ffi'
+gem 'tailwindcss-rails'
+gem 'jsbundling-rails'
+gem 'popper_js', '~> 2.11'
+
+
 
 group :development, :test do
   gem "dotenv-rails"
@@ -67,3 +72,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "cssbundling-rails", "~> 1.4"

@@ -41,9 +41,14 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem 'ffi'
-gem 'tailwindcss-rails'
-gem 'jsbundling-rails'
+gem 'sass-rails', '~> 6.0'
+# Use Tailwind CSS
+gem 'tailwindcss-rails', '~> 2.0'
+
 gem 'popper_js', '~> 2.11'
+gem 'react-rails'
+
+
 
 
 

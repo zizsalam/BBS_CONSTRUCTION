@@ -10,129 +10,98 @@
         body { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white shadow-md">
 
-<!-- Devise authentication links -->
-      <!-- Devise authentication links -->
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav me-auto">
-    <% if user_signed_in? %>
-      <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-        </div>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </li>
-    <% end %>
-  </ul>
-<div class="md:flex items-center">
-  <% if user_signed_in? %>
-    <%= link_to "Home", "#", class: "text-gray-800 hover:text-amber-600 px-3 py-2" %>
-    <%= link_to "Messages", "#", class: "text-gray-800 hover:text-amber-600 px-3 py-2" %>
-    <div class="relative">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "h-8 w-8 rounded-full cursor-pointer", id: "userDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden" id="userDropdownMenu">
-        <%= link_to "Action", "#", class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
-        <%= link_to "Another action", "#", class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
-        <%= link_to "Log out", destroy_user_session_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100", data: {turbo_method: :delete} %>
-      </div>
-    </div>
-  <% else %>
-    <%= link_to "Login", new_user_session_path, class: "text-gray-800 hover:text-amber-600 px-3 py-2" %>
-  <% end %>
-</div>
+  <body class="bg-gray-50">
 
-
-
-            </div>
-        </nav>
-    </header>
 
     <main>
-        <section class="bg-gradient-to-r from-amber-800 to-amber-600 text-white py-20">
+        <section class="bg-gradient-to-r from-amber-600 to-amber-400 text-white py-20">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">Construisez en toute confiance.</h1>
                 <p class="text-xl mb-12">Avec Constructec, bénéficiez d'une consultation architecturale et design gratuite. Transparence totale à chaque étape : pas de frais cachés, pas de surprises. Simplifiez vos projets avec nous.</p>
-                <a href="#" class="bg-white text-amber-600 py-3 px-8 rounded-full font-semibold hover:bg-gray-200 transition duration-300">Consultation gratuite</a> <!-- Text and button updated -->
-            </div>
+                <a href="<%= new_consultation_path %>" class="bg-white text-amber-600 py-3 px-8 rounded-full font-semibold hover:bg-gray-200 transition duration-300">Consultation gratuite</a>            </div>
         </section>
 
-        <section class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">Nos Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <svg class="w-12 h-12 text-amber-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg> <!-- Icon color updated to amber-600 -->
-                        <h3 class="text-xl font-semibold mb-2">Construction Résidentielle</h3>
-                        <p class="text-gray-600">Des maisons sur mesure qui reflètent votre style de vie unique.</p>
+        <section class="py-20 bg-gray-100">
+            <div class="container mx-auto px-8">
+                <h2 class="text-4xl font-bold text-center mb-10">Nos Services de Construction</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        <div class="text-amber-600 mb-4">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">Construction Résidentielle</h3>
+                        <p class="text-gray-700">Réalisation de maisons individuelles et de petits immeubles, adaptés à vos besoins et votre budget.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <svg class="w-12 h-12 text-amber-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
-                        <h3 class="text-xl font-semibold mb-2">Projets Commerciaux</h3>
-                        <p class="text-gray-600">Des espaces fonctionnels pour faire prospérer votre entreprise.</p>
+                    <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        <div class="text-amber-600 mb-4">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">Rénovation et Agrandissement</h3>
+                        <p class="text-gray-700">Donnez une nouvelle vie à votre propriété existante avec nos services sur mesure.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <svg class="w-12 h-12 text-amber-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                        </svg>
-                        <h3 class="text-xl font-semibold mb-2">Rénovations</h3>
-                        <p class="text-gray-600">Donnez une nouvelle vie à vos espaces existants avec notre expertise.</p>
+                    <div class="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        <div class="text-amber-600 mb-4">
+                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2">Gestion de Projet</h3>
+                        <p class="text-gray-700">Prise en charge complète de votre projet, de la conception à la livraison.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-         <section class="bg-white p-6 rounded-lg shadow-md">
-            <div class="container mx-auto px-8 text-center">
-                <h2 class="text-4xl font-bold mb-8">Pourquoi choisir Constructec ?</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="text-amber-600 mb-4">
-                            <svg class="w-14 h-14 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L12 12 4 12m16 0h-8"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold">Expertise</h3>
-                        <p>Des années d'expérience dans la construction, avec des projets réussis à travers le pays.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="text-amber-600 mb-4">
-                            <svg class="w-14 h-14 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L12 12 4 12m16 0h-8"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold">Qualité</h3>
-                        <p>Nous garantissons une finition de haute qualité à chaque étape de la construction.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="text-amber-600 mb-4">
-                            <svg class="w-14 h-14 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L12 12 4 12m16 0h-8"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold">Innovation</h3>
-                        <p>Nous intégrons des solutions innovantes et durables pour vos projets.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="text-amber-600 mb-4">
-                            <svg class="w-14 h-14 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L12 12 4 12m16 0h-8"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold">Engagement</h3>
-                        <p>Nous nous engageons à respecter vos délais et budgets, tout en assurant la satisfaction complète.</p>
-                    </div>
+        <section class="px-4 py-24 mx-auto max-w-7xl">
+            <h2 class="text-3xl font-bold text-center mb-12">À la Une de notre Blog</h2>
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                <div>
+                    <a href="#">
+                        <img class="object-cover w-full h-56 mb-5 bg-center rounded" src="https://res.cloudinary.com/dpubgcilc/image/upload/v1728220992/swastik-arora-t1vAuYBwtGg-unsplash_igsvrg.jpg" alt="Construction durable" loading="lazy" />
+                    </a>
+                    <h2 class="mb-2 text-lg font-semibold text-gray-900">
+                        <a href="#" class="text-gray-900 hover:text-amber-600">L'avenir de la construction durable au Sénégal</a>
+                    </h2>
+                    <p class="mb-3 text-sm font-normal text-gray-500">
+                        Découvrez comment les nouvelles technologies et les matériaux écologiques transforment le paysage de la construction au Sénégal. Nous explorons les innovations qui rendent nos bâtiments plus durables et respectueux de l'environnement.
+                    </p>
+                    <p class="mb-3 text-sm font-normal text-gray-500">
+                        <a href="#" class="font-medium text-gray-900 hover:text-amber-600">Abdoul Kane</a>
+                        • 15 avril 2024
+                    </p>
                 </div>
+                <div>
+                    <a href="#">
+                        <img class="object-cover w-full h-56 mb-5 bg-center rounded" src="https://res.cloudinary.com/dpubgcilc/image/upload/v1700246579/samples/cup-on-a-table.jpg" alt="Guide du financement immobilier" loading="lazy" />
+                    </a>
+                    <h2 class="mb-2 text-lg font-semibold text-gray-900">
+                        <a href="#" class="text-gray-900 hover:text-amber-600">Guide du financement immobilier au Sénégal en 2024</a>
+                    </h2>
+                    <p class="mb-3 text-sm font-normal text-gray-500">
+                        Comprendre les options de financement est crucial pour tout projet immobilier. Ce guide vous présente les différentes solutions disponibles au Sénégal, des prêts bancaires traditionnels aux nouvelles alternatives de financement.
+                    </p>
+                    <p class="mb-3 text-sm font-normal text-gray-500">
+                        <a href="#" class="font-medium text-gray-900 hover:text-amber-600">Modibo Kone</a>
+                        • 2 avril 2024
+                    </p>
+                </div>
+                <div>
+                    <a href="#">
+                        <img class="object-cover w-full h-56 mb-5 bg-center rounded" src="https://res.cloudinary.com/dpubgcilc/image/upload/v1728221047/sq-lim-RPT9QxdL1IM-unsplash_bav4mu.jpg" alt="Guide du financement immobilier" loading="lazy" />
+                    </a>
+                    <h2 class="mb-2 text-lg font-semibold text-gray-900">
+                        <a href="#" class="text-gray-900 hover:text-amber-600">Les maisons intelligentes : l'avenir de l'habitat au Sénégal</a>
+                    </h2>
+                    <p class="mb-3 text-sm font-normal text-gray-500">
+                        Explorez comment la technologie transforme nos maisons en espaces de vie plus confortables, sécurisés et économes en énergie. Découvrez les innovations qui façonnent l'avenir de l'habitat au Sénégal.
+                    </p>
+                    <p class="mb-3 text-sm font-normal text-gray-500">
+                        <a href="#" class="font-medium text-gray-900 hover:text-amber-600">Abdoul Kane</a>
+                        • 20 mars 2024
+                    </p>
+                </div>
+                <!-- Vous pouvez ajouter plus d'articles ici en suivant le même modèle -->
             </div>
+
         </section>
     </main>
 

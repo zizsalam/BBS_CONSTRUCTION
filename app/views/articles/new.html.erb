@@ -33,10 +33,17 @@
                     <%= form.text_field :title, class: "w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-amber-200" %>
                 </div>
 
+
+      <div class="field">
+         <%= form.label :body, "Content" %>
+        <%= form.text_area :body, class: "form-control" %>
+      </div>
+
+
                 <div class="field">
-                    <%= form.label :content, class: "block text-gray-700 font-bold mb-2" %>
-                    <%= form.text_area :content, class: "w-full p-3 border border-gray-300 rounded-md focus:ring focus:ring-amber-200", rows: 10 %>
-                </div>
+  <%= form.label :image_url %>
+  <%= form.text_field :image_url, class: "form-control" %>
+</div>
 
                 <div class="actions">
                     <%= form.submit 'Enregistrer l\'article', class: "px-6 py-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition duration-300" %>

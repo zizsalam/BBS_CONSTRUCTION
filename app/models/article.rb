@@ -1,3 +1,3 @@
 class Article < ApplicationRecord
-  has_rich_text :rich_body
+  belongs_to :author, class_name: 'User'
 end

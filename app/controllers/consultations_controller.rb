@@ -1,5 +1,7 @@
 # app/controllers/consultations_controller.rb
 class ConsultationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @consultation = Consultation.new
   end

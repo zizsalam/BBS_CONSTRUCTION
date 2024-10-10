@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.all.order(created_at: :desc) # This will show the latest articles first
   end
 
   # GET /articles/1
@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(article_params)
+    @article.author = current_user  # Définit l'utilisateur connecté comme auteur de l'article
 
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
@@ -47,9 +48,16 @@ class ArticlesController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to articles_path, alert: "Article not found."
     end
 
+    # Only allow a list of trusted parameters through.
+    def article_params
+      params.require(:article).permit(:title, :body) # Adjust based on your article fields
+    end
 end

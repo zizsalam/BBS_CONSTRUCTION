@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "services", to: "pages#services"
 
   # Articles (restricted to :index and :show)
-  resources :articles, only: [:index, :show]
+  resources :articles
 
   resources :consultations, only: [:new, :create]
 

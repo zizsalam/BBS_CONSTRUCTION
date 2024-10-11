@@ -1,30 +1,25 @@
+# app/controllers/articles_controller.rb
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-
-  # GET /articles
   def index
-    @articles = Article.all.order(created_at: :desc) # This will show the latest articles first
+    @articles = Article.with_attached_image.all
+    # For debugging
+    Rails.logger.debug "Articles count: #{@articles.try(:count)}"
+  rescue => e
+    Rails.logger.error "Error in articles#index: #{e.message}"
+    @articles = [] # Fallback to empty array
   end
 
-  # GET /articles/1
   def show
+    @article = Article.find(params[:id])
+    @parsed_content = @article.parsed_content
   end
 
-  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
-  def edit
-  end
-
-  # POST /articles
   def create
     @article = Article.new(article_params)
-    @article.author = current_user  # Définit l'utilisateur connecté comme auteur de l'article
-
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
@@ -32,32 +27,12 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1
-  def update
-    if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /articles/1
-  def destroy
-    @article.destroy
-    redirect_to root_path, notice: 'Article was successfully destroyed.'
-  end
-
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      redirect_to articles_path, alert: "Article not found."
-    end
-
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article).permit(:title, :body) # Adjust based on your article fields
-    end
+  def article_params
+    params.require(:article).permit(:title, :body, :image)
+  end
 end
+
+# For debugging, you can add this to config/environments/development.rb
+# config.log_level = :debug

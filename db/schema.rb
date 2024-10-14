@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_10_211436) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_13_025135) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_10_211436) do
     t.bigint "author_id"
     t.datetime "published_at"
     t.string "image_url"
+    t.string "file_path"
     t.index ["author_id"], name: "index_articles_on_author_id"
   end
 
@@ -129,6 +130,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_10_211436) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

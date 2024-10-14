@@ -1,20 +1,23 @@
 Rails.application.routes.draw do
-  get "consultations/new"
-  get "consultations/create"
-  devise_for :users
+  # Devise routes
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
-  # Static pages
-  get "about", to: "pages#about"
-  get "home", to: "pages#home"
-  get "services", to: "pages#services"
+  get '/home', to: 'pages#home'
+  get '/about', to: 'pages#about'
+  get '/services', to: 'pages#services'
 
-  # Articles (restricted to :index and :show)
+
+  # Articles
   resources :articles
 
-  resources :consultations, only: [:new, :create]
+  # Users (restricted to :index, :show, :edit, :update)
+  resources :users, only: [:index, :show, :edit, :update]
 
-  # Users (restricted to :show, :edit, :update)
-  resources :users, only: [:show, :edit, :update]
+  # Consultations
+  resources :consultations, only: [:new, :create]
 
   # Messages
   resources :messages, only: [:index, :show, :new, :create]
@@ -24,6 +27,9 @@ Rails.application.routes.draw do
     resources :installment_plans, only: [:new, :create, :index, :show]
   end
 
+  # TinyMCE
+  post '/tinymce_assets', to: 'tinymce_assets#create'
+
   # Root route
-  root to: "pages#home"
+  root to: 'pages#home'
 end

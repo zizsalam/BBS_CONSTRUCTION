@@ -1,0 +1,8 @@
+toolbar:
+     - styleselect | bold italic | undo redo
+     - image | link
+plugins:
+     - image
+     - link
+images_upload_url: '/tinymce_assets'
+images_upload_credentials: true

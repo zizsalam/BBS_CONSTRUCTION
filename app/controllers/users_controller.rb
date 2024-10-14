@@ -1,15 +1,20 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update]
 
+
+  def index
+    @users = User.all
+  end
 
   def show
+    # The @user instance variable is already set by the set_user method
   end
 
   def edit
+    authorize_user(@user)
   end
 
   def update
+    authorize_user(@user)
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
@@ -24,6 +29,12 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email) # Add other permitted attributes
+    params.require(:user).permit(:name, :email) # Add other allowed parameters
+  end
+
+  def authorize_user(user)
+    unless current_user == user
+      redirect_to root_path, alert: "You are not authorized to perform this action."
+    end
   end
 end

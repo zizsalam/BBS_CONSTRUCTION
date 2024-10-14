@@ -49,8 +49,7 @@ gem 'popper_js', '~> 2.11'
 gem 'react-rails'
 gem 'actiontext'
 gem 'image_processing', '~> 1.2'
-gem 'redcarpet'
-gem 'front_matter_parser'
+gem 'tinymce-rails'
 
 
 

@@ -2,6 +2,7 @@
  *= require application.tailwind
  */
 
- /*
-*= require actiontext
+/*
+ *= require trix
+ *= require actiontext
 */

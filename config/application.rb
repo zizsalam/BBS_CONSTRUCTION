@@ -12,7 +12,7 @@ module BBSConstruction
     # Configure asset pipeline
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app/assets/builds")
-
+config.autoload_paths += %W(#{config.root}/app/articles)
     # Configure importmap
     config.importmap.enabled = true
   end

@@ -1,19 +1,11 @@
 class Article < ApplicationRecord
   has_one_attached :image
-
   validates :title, presence: true
   validates :body, presence: true
 
-  def display_image
-    if image.attached?
-      image
-    else
-      'default-article-image.jpg' # Make sure this default image exists in app/assets/images/
+  def image_or_image_url_present
+    unless images.attached? || image_url.present?
+      errors.add(:base, "Please provide either an image file or an image URL")
     end
   end
-
-  def parsed_content
-    MarkdownParser.new(body).parse
-  end
-
 end

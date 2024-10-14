@@ -43,7 +43,7 @@ gem "sassc-rails"
 gem 'ffi'
 gem 'sass-rails', '~> 6.0'
 # Use Tailwind CSS
-gem 'tailwindcss-rails', '~> 2.0'
+gem 'tailwindcss-rails', '~> 2.7'
 
 gem 'popper_js', '~> 2.11'
 gem 'react-rails'

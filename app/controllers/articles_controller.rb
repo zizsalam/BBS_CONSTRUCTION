@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-
+  include ActionView::Helpers::SanitizeHelper
 
   def index
     @articles = Article.with_attached_image.order(published_at: :desc).limit(3)
@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
       attributes: %w(src alt width height) # Allow specific attributes for <img>
     )
 
+    @article = Article.new(article_params)
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
@@ -62,6 +63,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content) # Add other allowed parameters
+    params.require(:article).permit(:title, :body, :image, :image_url)
   end
 end

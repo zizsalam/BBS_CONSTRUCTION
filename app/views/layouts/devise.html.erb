@@ -12,48 +12,97 @@
     <%= yield(:head) %>
   </head>
 
+  <%= render "shared/navbar" %>
+<!-- app/views/layouts/devise.html.erb -->
 <div class="container mx-auto px-6 py-8">
   <div class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
     <div class="px-6 py-4">
-      <h2 class="text-2xl font-bold text-amber-600 mb-6">Log in</h2>
+      <!-- Tabs to Toggle Between Login and Signup -->
+      <div class="flex justify-center space-x-4 mb-6">
+        <button id="login-tab" class="text-lg font-bold text-gray-700 hover:text-amber-600 focus:outline-none focus:text-amber-600" onclick="showLoginForm()">Log in</button>
+        <button id="signup-tab" class="text-lg font-bold text-gray-700 hover:text-amber-600 focus:outline-none focus:text-amber-600" onclick="showSignupForm()">Sign up</button>
+      </div>
 
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
-        <div>
-          <%= f.input :email,
-                      label_html: { class: "block text-sm font-medium text-gray-700" },
-                      input_html: { class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "your@email.com" },
-                      required: false,
-                      autofocus: true,
-                      autocomplete: "email" %>
+      <!-- Login Form -->
+      <div id="login-form" class="form-container">
+        <h2 class="text-2xl font-bold text-amber-600 mb-6">Log in</h2>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div>
+            <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "your@email.com" %>
+          </div>
+
+          <div>
+            <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "••••••••" %>
+          </div>
+
+          <div>
+            <%= f.submit "Log in", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition duration-150 ease-in-out" %>
+          </div>
+        <% end %>
+        <div class="mt-4 text-center text-sm text-gray-600">
+          Don’t have an account?
+          <button class="font-medium text-amber-600 hover:text-amber-500" onclick="showSignupForm()">Sign up</button>
         </div>
+      </div>
 
-        <div>
-          <%= f.input :password,
-                      label_html: { class: "block text-sm font-medium text-gray-700" },
-                      input_html: { class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "••••••••" },
-                      required: false,
-                      autocomplete: "current-password" %>
-        </div>
+      <!-- Signup Form (hidden by default) -->
+      <div id="signup-form" class="form-container" style="display: none;">
+        <h2 class="text-2xl font-bold text-amber-600 mb-6">Sign up</h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-4" }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
 
-        <% if devise_mapping.rememberable? %>
-          <div class="flex items-center">
-            <%= f.input :remember_me, as: :boolean,
-                        label_html: { class: "ml-2 block text-sm text-gray-900" },
-                        input_html: { class: "h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 rounded" } %>
+          <div>
+            <%= f.label :name, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.text_field :name, required: true, class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "Your name" %>
+          </div>
+
+          <div>
+            <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "your@email.com" %>
+          </div>
+
+          <div>
+            <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.password_field :password, required: true, autocomplete: "new-password", class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "••••••••" %>
+            <% if @minimum_password_length %>
+              <p class="mt-1 text-xs text-gray-500"><%= @minimum_password_length %> characters minimum</p>
+            <% end %>
+          </div>
+
+          <div>
+            <%= f.label :password_confirmation, class: "block text-sm font-medium text-gray-700" %>
+            <%= f.password_field :password_confirmation, required: true, autocomplete: "new-password", class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "••••••••" %>
+          </div>
+
+          <div>
+            <%= f.submit "Sign up", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition duration-150 ease-in-out" %>
           </div>
         <% end %>
 
-        <div>
-          <%= f.button :submit, "Log in", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition duration-150 ease-in-out" %>
+        <div class="mt-4 text-center text-sm text-gray-600">
+          Already have an account?
+          <button class="font-medium text-amber-600 hover:text-amber-500" onclick="showLoginForm()">Log in</button>
         </div>
-      <% end %>
-
-      <div class="mt-4 text-center text-sm text-gray-600">
-        Don't have an account?
-        <%= link_to "Sign up", new_registration_path(resource_name), class: "font-medium text-amber-600 hover:text-amber-500" %>
-        <br>
-        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "font-medium text-amber-600 hover:text-amber-500" %>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  function showLoginForm() {
+    document.getElementById('login-form').style.display = 'block';
+    document.getElementById('signup-form').style.display = 'none';
+  }
+
+  function showSignupForm() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('signup-form').style.display = 'block';
+  }
+
+  // Optionally, set which tab is shown by default
+  document.getElementById('login-tab').click();
+</script>

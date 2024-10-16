@@ -40,14 +40,13 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
-gem 'ffi'
+ gem 'ffi', '< 1.17.0'
 gem 'sass-rails', '~> 6.0'
 # Use Tailwind CSS
 gem 'tailwindcss-rails', '~> 2.0'
 
 gem 'popper_js', '~> 2.11'
 gem 'react-rails'
-gem 'actiontext'
 gem 'image_processing', '~> 1.2'
 gem 'tinymce-rails'
 gem 'rake'

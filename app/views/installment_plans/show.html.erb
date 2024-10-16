@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @installment_plan %>
+
+<div>
+  <%= link_to "Edit this installment plan", edit_installment_plan_path(@installment_plan) %> |
+  <%= link_to "Back to installment plans", installment_plans_path %>
+
+  <%= button_to "Destroy this installment plan", @installment_plan, method: :delete %>
+</div>

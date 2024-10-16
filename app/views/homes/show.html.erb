@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @home %>
+
+<!-- app/views/homes/show.html.erb -->
+<h1>Home Details</h1>
+<p>Address: <%= @home.address %></p>
+<p>Price: <%= number_to_currency(@home.price) %></p>
+
+<h2>Installment Plans</h2>
+<%= link_to "Add Installment Plan", new_home_installment_plan_path(@home) %>
+
+<ul>
+  <% @home.installment_plans.each do |plan| %>
+    <li>Amount: <%= number_to_currency(plan.installment_amount) %>, Due Date: <%= plan.due_date %></li>
+  <% end %>
+</ul>
+
+
+
+<div>
+  <%= link_to "Edit this home", edit_home_path(@home) %> |
+  <%= link_to "Back to homes", homes_path %>
+
+  <%= button_to "Destroy this home", @home, method: :delete %>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @prequalification %>
+
+<div>
+  <%= link_to "Edit this prequalification", edit_prequalification_path(@prequalification) %> |
+  <%= link_to "Back to prequalifications", prequalifications_path %>
+
+  <%= button_to "Destroy this prequalification", @prequalification, method: :delete %>
+</div>

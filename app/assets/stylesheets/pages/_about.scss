@@ -1,0 +1,232 @@
+// Variables
+$primary-color: #f5f5dc;
+$text-color: #333;
+$accent-color: #4a4a4a;
+
+// Mixins
+@mixin section-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: $text-color;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+@mixin fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+// Keyframes
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Global styles
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $primary-color;
+  color: $text-color;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 15px;
+  text-align: center;
+}
+
+// About banner styles
+.about-banner {
+  background-color: $primary-color;
+  padding: 90px 0;
+
+  .container {
+    @include fade-in-up;
+
+    h1 {
+      @include section-heading;
+    }
+
+    p {
+      font-size: 20px;
+      opacity: 0.7;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+// Team section styles
+.team-section {
+  padding: 60px 0;
+
+  h1 {
+    @include section-heading;
+    @include fade-in-up;
+    animation-delay: 0.2s;
+  }
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.team-member {
+  flex-basis: calc(33.333% - 2rem);
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  @include fade-in-up;
+  animation-delay: 0.4s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: $text-color;
+  }
+
+  p {
+    font-size: 1rem;
+    color: lighten($text-color, 20%);
+  }
+}
+
+// General Section Styling
+.mission-section {
+    padding: 40px 0;
+    background-color: $primary-color;
+
+    h2 {
+        text-align: justify; // Center the heading
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .mission-content {
+        display: flex;
+        align-items:first baseline;
+        justify-content: space-between;
+        gap: 80px; // Space between the text and image
+        padding: 20px 0;
+    }
+
+    // Mission Text (Left Side)
+    .mission-text {
+        flex: 4; // Make text take up 50% of the space
+        padding-right: 20px; // Space between text and image
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            text-align: left;
+        }
+    }
+
+    // Mission Image (Right Side)
+    .mission-image {
+        flex: 1; // Make image take up 50% of the space
+        padding-left: 20px; // Space between image and text
+
+        img {
+            width: 100%; // Ensure the image fills the container
+            height: auto;
+            border-radius: 8px;
+        }
+    }
+
+    // Responsive Design for Smaller Screens
+    @media (max-width: 768px) {
+        .mission-content {
+            flex-direction: column; // Stack text and image vertically
+            align-items: center;
+        }
+
+        .mission-text {
+            padding-right: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mission-image {
+            padding-left: 0;
+        }
+    }
+}
+
+
+
+// Footer styles
+.footer {
+  background-color: $accent-color;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+  @include fade-in-up;
+  animation-delay: 0.8s;
+
+  a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .team-member {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+    flex-basis: 100%;
+  }
+}

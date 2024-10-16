@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YourAppName</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <%# Use one of the following depending on your setup %>
+  <%= javascript_importmap_tags %>
+ <%= javascript_include_tag "tinymce" %>
+</head>
+<body>
+ <%= render "shared/navbar" %>
+  <%= yield %>
+</body>
+</html>

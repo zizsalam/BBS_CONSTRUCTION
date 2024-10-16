@@ -1,0 +1,71 @@
+<!-- app/views/consultations/new.html.erb -->
+
+
+  <%= form_with(model: @consultation, local: true, class: "space-y-4") do |f| %>
+    <!-- Form fields go here -->
+  <% end %>
+</div>
+
+<div class="container mx-auto px-6 py-8">
+  <div class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="px-6 py-4">
+      <h2 class="text-2xl font-bold text-amber-600 mb-6">Demande de Consultation Gratuite</h2>
+
+      <%= form_with(model: @consultation, local: true, class: "space-y-4") do |f| %>
+        <div>
+          <%= f.label :full_name, "Nom complet", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :full_name, class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "Votre nom complet" %>
+        </div>
+
+        <div>
+          <%= f.label :email, "Email", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.email_field :email, class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "votre@email.com" %>
+        </div>
+
+        <div>
+          <%= f.label :site_address, "Adresse du site", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :site_address, class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "Adresse du site de construction" %>
+        </div>
+
+        <div>
+          <%= f.label :city, "Ville", class: "block text-sm font-medium text-gray-700" %>
+          <%= f.text_field :city, class: "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "Votre ville" %>
+        </div>
+
+        <div>
+          <%= f.label :owns_site, "Êtes-vous propriétaire du site ou du bâtiment ?", class: "block text-sm font-medium text-gray-700" %>
+          <div class="mt-2 space-x-4">
+            <div class="inline-flex items-center">
+              <%= f.radio_button :owns_site, true, class: "h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300" %>
+              <%= f.label :owns_site_true, "Oui", class: "ml-2 text-sm text-gray-900" %>
+            </div>
+            <div class="inline-flex items-center">
+              <%= f.radio_button :owns_site, false, class: "h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300" %>
+              <%= f.label :owns_site_false, "Non", class: "ml-2 text-sm text-gray-900" %>
+            </div>
+          </div>
+        </div>
+
+         <div>
+
+      <%= f.label :budget, "Quel est votre budget pour le projet?", class: "block text-sm font-medium text-gray-700" %>
+      <%= f.text_field :budget, class:  "mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm", placeholder: "95.000.000 FCFA" %>
+    </div>
+
+
+    <div>
+      <%= f.label :phone_number, "Numéro de téléphone", class: "block text-sm font-medium text-gray-700" %>
+      <%= f.telephone_field :phone_number, class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-amber-500 focus:border-amber-500 sm:text-sm" %>
+    </div>
+
+
+
+
+
+        <div>
+          <%= f.submit "Envoyer", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition duration-150 ease-in-out" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

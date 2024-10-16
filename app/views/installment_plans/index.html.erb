@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Installment plans" %>
+
+<h1>Installment plans</h1>
+
+<div id="installment_plans">
+  <% @installment_plans.each do |installment_plan| %>
+    <%= render installment_plan %>
+    <p>
+      <%= link_to "Show this installment plan", installment_plan %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New installment plan", new_installment_plan_path %>

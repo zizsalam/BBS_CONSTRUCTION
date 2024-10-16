@@ -4,13 +4,3 @@
 @import 'actiontext.css';
 @import "actiontext";
 @import "actiontext";
-
-
-.trix-content {
-  @apply prose; /* Apply Tailwind prose utilities */
-}
-
-trix-editor {
-  @apply bg-white border border-gray-300;
-  min-height: 200px;
-}

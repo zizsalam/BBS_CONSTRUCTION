@@ -1,3 +1,0 @@
-.trix-content {
-  @apply prose;  /* Assuming you have the 'prose' utility class from Tailwind */
-}

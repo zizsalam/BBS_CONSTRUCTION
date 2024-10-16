@@ -7,6 +7,15 @@ module.exports = {
   theme: {
     extend: {},
   },
+
+  extend: {
+    colors: {
+      gray: {
+        300: 'rgb(209, 213, 219)',
+      },
+    },
+  },
+
   plugins: [
     require('@tailwindcss/typography'),
   ],

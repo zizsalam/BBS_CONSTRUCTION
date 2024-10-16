@@ -3,12 +3,12 @@ import "controllers";  // Ensure this is not causing issues
 import "@popperjs/core";  // Only if needed
 import "bootstrap";  // Only if needed
 import "trix";  // Ensure Trix is imported
-import "@rails/actiontext";  // Ensure ActionText is imported
 
 
 import tinymce from 'tinymce/tinymce';
 import 'tinymce/themes/silver';
 import 'tinymce/icons/default';
+
 
 document.addEventListener('turbolinks:load', function() {
   tinymce.init({

@@ -50,6 +50,7 @@ gem 'react-rails'
 gem 'actiontext'
 gem 'image_processing', '~> 1.2'
 gem 'tinymce-rails'
+gem 'rake'
 
 
 

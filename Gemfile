@@ -39,7 +39,7 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
-gem 'ffi', '< 1.17.0'
+gem 'ffi', '< 1.18.0'
 # Use Tailwind CSS
 gem 'tailwindcss-rails', '~> 2.0'
 

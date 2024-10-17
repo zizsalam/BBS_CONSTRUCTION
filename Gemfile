@@ -30,23 +30,18 @@ ruby ' 3.1.2'
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
 
-gem "bootstrap", "~> 5.2"
 gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
  gem 'ffi', '< 1.17.0'
-gem 'sass-rails', '~> 6.0'
 # Use Tailwind CSS
 gem 'tailwindcss-rails', '~> 2.0'
 
-gem 'popper_js', '~> 2.11'
 gem 'react-rails'
 gem 'image_processing', '~> 1.2'
 gem 'tinymce-rails'

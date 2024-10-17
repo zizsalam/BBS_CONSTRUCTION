@@ -92,11 +92,6 @@ GEM
     bcrypt (3.1.20)
     bigdecimal (3.1.8)
     bindex (0.8.1)
-    bootsnap (1.18.4)
-      msgpack (~> 1.2)
-    bootstrap (5.3.3)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.11.8, < 3)
     brakeman (6.2.1)
       racc
     builder (3.3.0)
@@ -169,7 +164,6 @@ GEM
     mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.1)
-    msgpack (1.7.3)
     net-imap (0.4.17)
       date
       net-protocol
@@ -190,7 +184,6 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.8)
-    popper_js (2.11.8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -284,8 +277,6 @@ GEM
       ffi (~> 1.12)
       logger
     rubyzip (2.3.2)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -349,8 +340,6 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  bootsnap
-  bootstrap (~> 5.2)
   brakeman
   capybara
   cssbundling-rails (~> 1.4)
@@ -364,13 +353,11 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg (~> 1.1)
-  popper_js (~> 2.11)
   puma (>= 5.0)
   rails (~> 7.2.1)
   rake
   react-rails
   rubocop-rails-omakase
-  sass-rails (~> 6.0)
   sassc-rails
   selenium-webdriver
   simple_form!

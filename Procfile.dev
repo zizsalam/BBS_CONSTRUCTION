@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 web: bundle exec puma -C config/puma.rb
 worker: bin/jobs
 
+=======
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
 web: bin/rails server -p 3000
 css: bin/rails tailwindcss:watch

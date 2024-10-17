@@ -4,13 +4,22 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.0.0",
     "@hotwired/turbo-rails": "^7.0.0",
+<<<<<<< HEAD
+=======
+    "@rails/actiontext": "^7.2.100",
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
+<<<<<<< HEAD
     "tailwindcss": "^3.4.14"
+=======
+    "tailwindcss": "^3.4.13",
+    "trix": "^2.1.6"
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
   },
   "scripts": {
     "build:css": "tailwindcss -i ./app/assets/stylesheets/tailwind.css -o ./app/assets/builds/tailwind.css"

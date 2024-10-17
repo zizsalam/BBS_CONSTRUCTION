@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+<<<<<<< HEAD
 
   extend: {
     colors: {
@@ -16,6 +17,8 @@ module.exports = {
     },
   },
 
+=======
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
   plugins: [
     require('@tailwindcss/typography'),
   ],

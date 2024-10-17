@@ -19,7 +19,10 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
+<<<<<<< HEAD
 ruby ' 3.1.2'
+=======
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -30,14 +33,24 @@ ruby ' 3.1.2'
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
+<<<<<<< HEAD
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 
+=======
+gem "bootsnap", require: false
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem "image_processing", "~> 1.2"
+
+gem "bootstrap", "~> 5.2"
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
 gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
+<<<<<<< HEAD
  gem 'ffi', '< 1.17.0'
 # Use Tailwind CSS
 gem 'tailwindcss-rails', '~> 2.0'
@@ -46,6 +59,18 @@ gem 'react-rails'
 gem 'image_processing', '~> 1.2'
 gem 'tinymce-rails'
 gem 'rake'
+=======
+gem 'ffi'
+gem 'sass-rails', '~> 6.0'
+# Use Tailwind CSS
+gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'popper_js', '~> 2.11'
+gem 'react-rails'
+gem 'actiontext'
+gem 'image_processing', '~> 1.2'
+gem 'tinymce-rails'
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
 
 
 

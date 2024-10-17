@@ -21,7 +21,11 @@ Rails.application.configure do
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
+<<<<<<< HEAD
     config.action_controller.perform_caching = true
+=======
+    config.action_controller.perform_caching = false
+>>>>>>> 1f4c43de2565a15b48feefa646368befaf4a5c08
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store

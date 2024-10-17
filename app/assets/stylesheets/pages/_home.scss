@@ -1,0 +1,22 @@
+/* app/assets/stylesheets/application.css */
+
+.custom-section {
+  background-color:#ffffff; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 2rem; /* Extra padding */
+}
+
+/* You can also style elements inside the section */
+.custom-section h1 {
+  color: #2c3e50; /* Darker text color */
+}
+
+.custom-section p {
+  color: #34495e; /* Medium text color */
+}
+
+.custom-section .btn {
+  background-color: #3498db; /* Button color */
+  color: white; /* Button text color */
+}

@@ -41,7 +41,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem 'ffi', '< 1.17.0'
 # Use Tailwind CSS
-gem 'tailwindcss-rails', '~> 2.0'
+gem 'tailwindcss-rails', '~> 3.0'
 
 gem 'popper_js', '~> 2.11'
 gem 'react-rails'
